@@ -4,259 +4,339 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alireza Hami - PharmD Candidate</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #34495e;
-            --accent-color: #7f8fa6;
-            --text-color: #333;
-            --bg-color: #f8f9fa;
+            --text-main: #333333;
+            --text-light: #666666;
+            --primary-blue: #2c3e50;
+            --link-color: #3498db;
+            --bg-color: #ffffff;
+            --border-color: #eaeaea;
         }
-        
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
-            color: var(--text-color);
+            color: var(--text-main);
             background-color: var(--bg-color);
             margin: 0;
             padding: 0;
         }
 
-        .container {
-            max-width: 900px;
+        /* --- Navbar --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            border-bottom: 1px solid var(--border-color);
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 40px 20px;
-            background-color: #fff;
-            box-shadow: 0 0 15px rgba(0,0,0,0.05);
         }
 
-        /* Header */
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid var(--primary-color);
+        .navbar-brand {
+            font-size: 1.25em;
+            font-weight: bold;
+            color: var(--text-light);
+            text-decoration: none;
+            letter-spacing: 0.5px;
         }
 
-        h1 {
-            color: var(--primary-color);
+        .navbar-links a {
+            text-decoration: none;
+            color: var(--text-light);
+            margin-left: 30px;
+            font-size: 1.05em;
+            transition: color 0.2s;
+        }
+
+        .navbar-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* --- Main Layout --- */
+        .container {
+            display: flex;
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 40px;
+            gap: 60px;
+        }
+
+        /* --- Sidebar (Left) --- */
+        .sidebar {
+            flex: 0 0 300px;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .sidebar h2 {
+            font-size: 1.4em;
             margin: 0 0 10px 0;
-            font-size: 2.5em;
-            letter-spacing: 1px;
+            color: var(--primary-blue);
         }
 
-        .subtitle {
-            font-size: 1.1em;
-            color: var(--secondary-color);
-            font-style: italic;
-            margin-bottom: 10px;
+        .sidebar .title {
+            font-size: 0.95em;
+            color: var(--text-light);
+            margin-bottom: 25px;
+            line-height: 1.4;
         }
 
         .contact-info {
-            font-size: 1em;
-            color: var(--accent-color);
+            list-style: none;
+            padding: 0;
+            margin: 0 0 30px 0;
         }
 
-        /* Sections */
-        section {
-            margin-bottom: 35px;
+        .contact-info li {
+            margin-bottom: 12px;
+            font-size: 0.95em;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
         }
 
-        h2 {
-            color: var(--primary-color);
-            font-size: 1.3em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
+        .contact-info i {
+            width: 20px;
+            color: var(--text-light);
+            margin-right: 10px;
+            text-align: center;
+        }
+
+        .contact-info a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Languages Section --- */
+        .languages-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .languages-section h3 {
+            font-size: 1.1em;
             margin-bottom: 15px;
+            color: var(--text-main);
         }
 
-        p {
+        .lang-item {
+            margin-bottom: 10px;
+            font-size: 0.95em;
+            color: var(--text-light);
+        }
+        
+        .cert-link {
+            display: inline-block;
+            margin-top: 5px;
+            font-size: 0.85em;
+            color: var(--link-color);
+            text-decoration: none;
+            border: 1px solid var(--link-color);
+            padding: 2px 8px;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .cert-link:hover {
+            background-color: var(--link-color);
+            color: #fff;
+        }
+
+        /* --- Main Content (Right) --- */
+        .main-content {
+            flex: 1;
+        }
+
+        .main-content h2 {
+            font-size: 1.8em;
+            color: var(--text-main);
             margin-top: 0;
+            margin-bottom: 30px;
+        }
+
+        .main-content h3 {
+            font-size: 1.3em;
+            color: var(--text-main);
+            margin-top: 40px;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .main-content p {
+            margin-top: 0;
+            margin-bottom: 15px;
             text-align: justify;
         }
 
-        /* Education */
-        .education-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-            margin-bottom: 5px;
+        .main-content a {
+            color: var(--link-color);
+            text-decoration: none;
         }
 
-        .education-item h3 {
-            margin: 0;
-            font-size: 1.1em;
-            color: var(--text-color);
+        .main-content a:hover {
+            text-decoration: underline;
         }
 
-        .date {
-            font-weight: 500;
-            color: var(--accent-color);
-        }
-
-        .gpa {
-            margin-top: 5px;
-            color: var(--secondary-color);
-        }
-
-        /* Experience */
-        .experience-item {
+        .main-content ul {
+            margin-top: 10px;
             margin-bottom: 20px;
-        }
-
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-        }
-
-        .experience-header h3 {
-            margin: 0;
-            font-size: 1.1em;
-            color: var(--text-color);
-        }
-
-        .experience-header .date {
-            font-style: italic;
-        }
-
-        .supervisor {
-            font-style: italic;
-            color: var(--accent-color);
-            margin-bottom: 10px;
-            font-size: 0.95em;
-        }
-
-        ul {
-            margin-top: 5px;
             padding-left: 20px;
         }
 
-        li {
+        .main-content li {
             margin-bottom: 8px;
             text-align: justify;
         }
 
-        /* Skills */
-        .skill-group {
-            margin-bottom: 10px;
+        .highlight-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--link-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
         }
 
-        .skill-group strong {
-            color: var(--secondary-color);
+        .highlight-box p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-light);
         }
 
-        /* Interests */
-        .interests {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .interest-tag {
-            background-color: #eef2f5;
-            color: var(--primary-color);
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            font-weight: 500;
-        }
-
-        /* Responsive */
-        @media (max-width: 600px) {
-            .container { padding: 20px 15px; }
-            h1 { font-size: 2em; }
-            .education-item, .experience-header { flex-direction: column; }
-            .date { margin-top: 5px; }
+        /* Responsive Design */
+        @media (max-width: 850px) {
+            .container {
+                flex-direction: column;
+                padding: 0 20px;
+                gap: 40px;
+            }
+            .sidebar {
+                flex: 1;
+                text-align: center;
+            }
+            .profile-img {
+                margin: 0 auto 20px auto;
+            }
+            .contact-info li {
+                justify-content: center;
+            }
+            .navbar {
+                padding: 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+            .navbar-links a {
+                margin: 0 15px;
+            }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <h1>Alireza Hami</h1>
-        <div class="subtitle">Final-Year PharmD Student | Recombinant Protein Expression & Purification</div>
-        <div class="contact-info">alirezaehami1380@gmail.com</div>
-    </header>
-
-    <section id="profile">
-        <h2>Professional Profile</h2>
-        <p>
-            Final-year Doctor of Pharmacy student with a GPA of 17.15/20 and hands-on research experience in recombinant protein production. Current thesis work focuses on expression and purification of the Fc fragment of trastuzumab using a C-intein-based approach as part of a broader antibody-production project (<em>Expression, purification and in vitro biological evaluation of an split-intein antibody scFv-Fc against HER2</em>). Practical laboratory experience includes bacterial cloning, plasmid preparation, PCR, recombinant protein expression, nickel-affinity purification, membrane-based purification, and SDS-PAGE. Particularly interested in antibody engineering, cellular immunology, and oncology.
-        </p>
-    </section>
-
-    <section id="education">
-        <h2>Education</h2>
-        <div class="education-item">
-            <h3>Doctor of Pharmacy (PharmD) — Isfahan University of Medical Sciences</h3>
-            <span class="date">2020–Present</span>
+    <!-- Top Navbar -->
+    <nav class="navbar">
+        <a href="#" class="navbar-brand">Alireza Hami</a>
+        <div class="navbar-links">
+            <a href="cv.pdf" target="_blank">CV</a> <!-- This will link to the PDF CV later -->
         </div>
-        <div class="gpa">Final-year student | GPA: 17.15/20</div>
-    </section>
+    </nav>
 
-    <section id="experience">
-        <h2>Thesis & Research Experience</h2>
-        <div class="experience-item">
-            <div class="experience-header">
-                <h3>PharmD Thesis Research — Recombinant Trastuzumab Fc Production</h3>
-                <span class="date">Ongoing</span>
-            </div>
-            <div class="supervisor">Supervisor: Dr. Vajiheh Akbari</div>
-            <p><strong>Thesis title:</strong> Synthesis and purification of the Fc fragment of split trastuzumab using a C-intein-based approach</p>
-            <ul>
-                <li>Contributing to a larger research project aimed at producing trastuzumab using an intein-based protein-expression strategy.</li>
-                <li>Responsible for production and purification of the Fc component of the antibody construct.</li>
-                <li>Perform bacterial cloning, plasmid preparation, and PCR as part of the molecular cloning workflow.</li>
-                <li>Carry out recombinant protein expression and downstream purification using nickel-affinity chromatography and membrane-based purification.</li>
-                <li>Prepare and evaluate SDS-PAGE gels to assess protein expression and purification.</li>
-                <li>Planned responsibility for the in vivo functional evaluation of the produced protein in nude mice; this phase has not yet been performed and is scheduled for later in 2026.</li>
+    <!-- Main Layout -->
+    <div class="container">
+        
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <!-- Replace 'profile.jpg' with your actual image file name in the repo -->
+            <img src="profile.jpg" alt="Alireza Hami" class="profile-img">
+            
+            <h2>Alireza Hami</h2>
+            <div class="title">Final-Year PharmD Student<br>Recombinant Protein Expression & Purification</div>
+            
+            <ul class="contact-info">
+                <li><i class="fas fa-envelope"></i> <a href="mailto:alirezaehami1380@gmail.com">Email</a></li>
+                <!-- You can add LinkedIn and Github here if you have them -->
+                <!-- <li><i class="fab fa-linkedin"></i> <a href="YOUR_LINKEDIN_URL">LinkedIn</a></li> -->
             </ul>
-        </div>
-    </section>
 
-    <section id="skills">
-        <h2>Laboratory Skills</h2>
-        <div class="skill-group">
-            <strong>Molecular Biology:</strong> Bacterial cloning; plasmid preparation; PCR.
-        </div>
-        <div class="skill-group">
-            <strong>Protein Expression:</strong> Recombinant protein synthesis and expression; antibody Fc fragment production.
-        </div>
-        <div class="skill-group">
-            <strong>Protein Purification:</strong> Nickel-affinity chromatography; membrane-based protein purification.
-        </div>
-        <div class="skill-group">
-            <strong>Protein Analysis:</strong> SDS-PAGE gel preparation and protein-band assessment.
-        </div>
-        <div class="skill-group">
-            <strong>Research Practice:</strong> Experimental documentation; literature review; laboratory troubleshooting; data recording and interpretation.
-        </div>
-    </section>
+            <!-- Languages Section (Requested) -->
+            <div class="languages-section">
+                <h3>Languages</h3>
+                <div class="lang-item">
+                    <strong>English:</strong> B2
+                </div>
+                <div class="lang-item">
+                    <strong>German:</strong> B1 (ÖSD certified)<br>
+                    <!-- Replace 'osd_certificate.pdf' with your actual certificate file name -->
+                    <a href="osd_certificate.pdf" target="_blank" class="cert-link">
+                        <i class="fas fa-file-pdf"></i> View Certificate
+                    </a>
+                </div>
+            </div>
+        </aside>
 
-    <section id="interests">
-        <h2>Research Interests</h2>
-        <div class="interests">
-            <span class="interest-tag">Cellular Immunology</span>
-            <span class="interest-tag">Antibody Engineering</span>
-            <span class="interest-tag">Molecular Cloning</span>
-            <span class="interest-tag">Oncology</span>
-            <span class="interest-tag">Biologics Development</span>
-            <span class="interest-tag">Therapeutic Protein Research</span>
-        </div>
-    </section>
+        <!-- Right Main Content -->
+        <main class="main-content">
+            <h2>About Me</h2>
+            
+            <p>
+                I am a final-year Doctor of Pharmacy (PharmD) student at Isfahan University of Medical Sciences with a strong interest in pursuing a Ph.D. in <strong>Antibody Engineering, Cellular Immunology, and Oncology</strong>. My current research focuses on the expression and purification of recombinant proteins, specifically the Fc fragment of trastuzumab. I am highly motivated to contribute to therapeutic protein research and biologics development.
+            </p>
 
-    <section id="languages">
-        <h2>Languages</h2>
-        <p><strong>English:</strong> B2</p>
-        <p><strong>German:</strong> B1 — ÖSD certified</p>
-    </section>
-</div>
+            <!-- Detailed Thesis Section -->
+            <h3>Thesis Project Details</h3>
+            <p>
+                <strong>Project Title:</strong> Expression, purification and in vitro biological evaluation of a split-intein antibody scFv-Fc against HER2.
+            </p>
+            <p>
+                As part of a broader research initiative aimed at producing trastuzumab using an intein-based protein-expression strategy, my thesis focuses on the <strong>synthesis and purification of the Fc fragment of split trastuzumab using a C-intein-based approach</strong>.
+            </p>
+            <p>My specific responsibilities and methodologies in this project include:</p>
+            <ul>
+                <li>Performing bacterial cloning, plasmid preparation, and PCR as part of the molecular cloning workflow.</li>
+                <li>Carrying out recombinant protein expression and downstream purification using nickel-affinity chromatography and membrane-based purification.</li>
+                <li>Preparing and evaluating SDS-PAGE gels to assess protein expression and purification efficiency.</li>
+                <li>Planned responsibility for the <em>in vivo</em> functional evaluation of the produced protein in nude mice, scheduled for 2026.</li>
+            </ul>
+
+            <!-- Programming Skills Section (Requested) -->
+            <h3>Programming & Computational Skills</h3>
+            <p>Alongside my wet-lab experience, I have developed a foundational understanding of programming and computational tools, which I am actively improving to enhance my data analysis capabilities:</p>
+            <ul>
+                <li><strong>Python:</strong> Beginner proficiency; familiar with basic syntax, data structures, and writing simple scripts for data handling.</li>
+                <li><strong>R:</strong> Basic knowledge for statistical analysis and data visualization.</li>
+                <li><strong>Bioinformatics Tools:</strong> Familiarity with basic sequence alignment tools (e.g., BLAST, Clustal Omega) and plasmid design software (e.g., SnapGene).</li>
+                <li><strong>Data Analysis:</strong> Experience using GraphPad Prism for statistical analysis and generating scientific graphs.</li>
+            </ul>
+
+            <h3>Research Interests</h3>
+            <p>
+                I am deeply interested in the intersection of molecular biology and therapeutic development. My primary research interests for future Ph.D. studies include:
+            </p>
+            <ul>
+                <li>Antibody Engineering and novel antibody formats (e.g., scFv, nanobodies).</li>
+                <li>Cellular Immunology and immuno-oncology.</li>
+                <li>Recombinant protein expression and purification optimization.</li>
+                <li>Biologics development and therapeutic protein research.</li>
+            </ul>
+        </main>
+    </div>
 
 </body>
 </html>
