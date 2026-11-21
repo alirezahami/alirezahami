@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,13 +28,13 @@
          /* --- Navbar --- */
         .navbar {
             display: flex;
-            justify-content: flex-start; /* تغییر: المان‌ها را به سمت چپ می‌چیند */
+            justify-content: flex-start;
             align-items: center;
             padding: 20px 40px;
             border-bottom: 1px solid var(--border-color);
             max-width: 1100px;
             margin: 0 auto;
-            gap: 40px; /* فاصله بین نام و لینک CV */
+            gap: 40px;
         }
 
         .navbar-brand {
@@ -42,12 +43,11 @@
             color: var(--text-light);
             text-decoration: none;
             letter-spacing: 0.5px;
-            /* margin-right حذف شد چون از gap استفاده کردیم */
         }
 
         .navbar-links {
             display: flex;
-            gap: 30px; /* اگر بعداً لینک‌های بیشتری اضافه کردید، از هم فاصله دارند */
+            gap: 30px;
         }
 
         .navbar-links a {
@@ -55,7 +55,6 @@
             color: var(--text-light);
             font-size: 1.05em;
             transition: color 0.2s;
-            /* margin-left حذف شد چون از gap استفاده کردیم */
         }
 
         /* --- Main Layout --- */
@@ -165,6 +164,7 @@
         /* --- Main Content (Right) --- */
         .main-content {
             flex: 1;
+            min-width: 0;
         }
 
         .main-content h2 {
@@ -223,6 +223,156 @@
             color: var(--text-light);
         }
 
+        /* --- Thesis Project Workflow --- */
+        .project-section {
+            margin-top: 20px;
+            margin-bottom: 45px;
+        }
+
+        .project-header {
+            margin-bottom: 28px;
+        }
+
+        .project-label {
+            display: inline-block;
+            color: #438b83;
+            font-size: 0.72em;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .project-header h3 {
+            font-size: 1.45em;
+            color: var(--primary-blue);
+            line-height: 1.4;
+            margin: 0 0 12px;
+            padding: 0;
+            border: none;
+        }
+
+        .project-header p {
+            color: var(--text-light);
+            font-size: 0.95em;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .project-workflow {
+            display: flex;
+            align-items: stretch;
+            gap: 12px;
+        }
+
+        .project-card {
+            flex: 1;
+            min-width: 0;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 20px 16px;
+            box-shadow: 0 4px 15px rgba(30, 50, 70, 0.04);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 9px 22px rgba(30, 50, 70, 0.08);
+        }
+
+        .stage-number {
+            color: #438b83;
+            font-size: 0.8em;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .project-card h4 {
+            color: var(--primary-blue);
+            font-size: 1.05em;
+            line-height: 1.4;
+            margin: 12px 0 10px;
+        }
+
+        .project-card p {
+            color: var(--text-light);
+            font-size: 0.84em;
+            line-height: 1.75;
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        .stage-tag {
+            display: inline-block;
+            background: #edf6f4;
+            color: #36786f;
+            border-radius: 5px;
+            padding: 6px 9px;
+            font-size: 0.76em;
+            font-weight: 600;
+        }
+
+        .workflow-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #438b83;
+            font-size: 1.4em;
+            flex-shrink: 0;
+        }
+
+        /* --- Personal Thesis Contribution --- */
+        .thesis-highlight {
+            display: flex;
+            gap: 16px;
+            margin-top: 26px;
+            padding: 24px;
+            background: #f5f8fa;
+            border-left: 4px solid #438b83;
+            border-radius: 7px;
+        }
+
+        .highlight-icon {
+            color: #438b83;
+            font-size: 1.3em;
+            padding-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .thesis-highlight .project-label {
+            margin-bottom: 8px;
+        }
+
+        .thesis-highlight h4 {
+            font-size: 1.08em;
+            color: var(--primary-blue);
+            line-height: 1.5;
+            margin: 0 0 10px;
+        }
+
+        .thesis-highlight p {
+            color: var(--text-light);
+            font-size: 0.9em;
+            line-height: 1.8;
+            margin-bottom: 16px;
+            text-align: left;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+
+        .skill-list span {
+            background: #ffffff;
+            border: 1px solid #e1e8ed;
+            color: #526477;
+            padding: 6px 9px;
+            border-radius: 5px;
+            font-size: 0.75em;
+        }
+
         /* Responsive Design */
         @media (max-width: 850px) {
             .container {
@@ -230,23 +380,47 @@
                 padding: 0 20px;
                 gap: 40px;
             }
+
             .sidebar {
                 flex: 1;
                 text-align: center;
             }
+
             .profile-img {
                 margin: 0 auto 20px auto;
             }
+
             .contact-info li {
                 justify-content: center;
             }
+
             .navbar {
                 padding: 20px;
                 flex-direction: column;
                 gap: 15px;
             }
+
             .navbar-links a {
                 margin: 0 15px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .project-workflow {
+                flex-direction: column;
+            }
+
+            .workflow-arrow {
+                transform: rotate(90deg);
+                padding: 3px 0;
+            }
+
+            .project-card p {
+                min-height: auto;
+            }
+
+            .thesis-highlight {
+                padding: 18px;
             }
         }
     </style>
@@ -257,7 +431,7 @@
     <nav class="navbar">
         <a href="#" class="navbar-brand">Alireza Hami</a>
         <div class="navbar-links">
-            <a href="cv.pdf" target="_blank">CV</a> <!-- This will link to the PDF CV later -->
+            <a href="cv.pdf" target="_blank">CV</a>
         </div>
     </nav>
 
@@ -266,7 +440,6 @@
         
         <!-- Left Sidebar -->
         <aside class="sidebar">
-            <!-- Replace 'profile.jpg' with your actual image file name in the repo -->
             <img src="profile.jpg" alt="Alireza Hami" class="profile-img">
             
             <h2>Alireza Hami</h2>
@@ -278,7 +451,7 @@
                 <!-- <li><i class="fab fa-linkedin"></i> <a href="YOUR_LINKEDIN_URL">LinkedIn</a></li> -->
             </ul>
 
-            <!-- Languages Section (Requested) -->
+            <!-- Languages Section -->
             <div class="languages-section">
                 <h3>Languages</h3>
                 <div class="lang-item">
@@ -300,23 +473,91 @@
                 I am a final-year Doctor of Pharmacy (PharmD) student at Isfahan University of Medical Sciences with a strong interest in pursuing a Ph.D. in <strong>Antibody Engineering, Cellular Immunology, and Oncology</strong>. My current research focuses on the expression and purification of recombinant proteins, specifically the Fc fragment of trastuzumab. I am highly motivated to contribute to therapeutic protein research and biologics development.
             </p>
 
-            <!-- Detailed Thesis Section -->
-            <h3>Thesis Project Details</h3>
-            <p>
-                <strong>Project Title:</strong> Expression, purification and in vitro biological evaluation of a split-intein antibody scFv-Fc against HER2.
-            </p>
-            <p>
-                As part of a broader research initiative aimed at producing trastuzumab using an intein-based protein-expression strategy, my thesis focuses on the <strong>synthesis and purification of the Fc fragment of split trastuzumab using a C-intein-based approach</strong>.
-            </p>
-            <p>My specific responsibilities and methodologies in this project include:</p>
-            <ul>
-                <li>Performing bacterial cloning, plasmid preparation, and PCR as part of the molecular cloning workflow.</li>
-                <li>Carrying out recombinant protein expression and downstream purification using nickel-affinity chromatography and membrane-based purification.</li>
-                <li>Preparing and evaluating SDS-PAGE gels to assess protein expression and purification efficiency.</li>
-                <li>Planned responsibility for the <em>in vivo</em> functional evaluation of the produced protein in nude mice, scheduled for 2026.</li>
-            </ul>
+            <!-- Thesis Project Section -->
+            <section class="project-section">
 
-            <!-- Programming Skills Section (Requested) -->
+                <div class="project-header">
+                    <span class="project-label">RESEARCH PROJECT</span>
+                    <h3>Development of a Split-Intein-Based Anti-HER2 Antibody</h3>
+                    <p>
+                        Development of an engineered scFv-Fc antibody through
+                        recombinant protein production and split-intein-mediated assembly.
+                    </p>
+                </div>
+
+                <div class="project-workflow">
+
+                    <div class="project-card">
+                        <span class="stage-number">01</span>
+                        <h4>Fc Fragment</h4>
+                        <p>
+                            Recombinant expression and purification of the IgG1 Fc
+                            component fused to the C-terminal split intein (IntC).
+                        </p>
+                        <span class="stage-tag">IntC–Linker–Fc</span>
+                    </div>
+
+                    <div class="workflow-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+
+                    <div class="project-card">
+                        <span class="stage-number">02</span>
+                        <h4>Anti-HER2 scFv</h4>
+                        <p>
+                            Recombinant production and purification of the HER2-specific
+                            single-chain variable fragment fused to the N-terminal split intein (IntN).
+                        </p>
+                        <span class="stage-tag">scFv–Linker–IntN</span>
+                    </div>
+
+                    <div class="workflow-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+
+                    <div class="project-card">
+                        <span class="stage-number">03</span>
+                        <h4>Antibody Assembly</h4>
+                        <p>
+                            Split-intein-mediated protein trans-splicing to covalently
+                            connect the Fc and scFv components, followed by in vitro
+                            evaluation of HER2 recognition.
+                        </p>
+                        <span class="stage-tag">scFv–Fc Antibody</span>
+                    </div>
+
+                </div>
+
+                <div class="thesis-highlight">
+                    <div class="highlight-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+
+                    <div>
+                        <span class="project-label">MY PHARM.D. THESIS</span>
+                        <h4>Recombinant Production and Purification of the Fc Fragment</h4>
+
+                        <p>
+                            My thesis focuses on the first stage of this collaborative
+                            project, involving the production and purification of the
+                            IntC-Fc component.
+                        </p>
+
+                        <div class="skill-list">
+                            <span>Molecular Cloning</span>
+                            <span>Plasmid Preparation</span>
+                            <span>PCR</span>
+                            <span>Protein Expression</span>
+                            <span>Ni-NTA Purification</span>
+                            <span>Membrane-Based Purification</span>
+                            <span>SDS-PAGE</span>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Programming Skills Section -->
             <h3>Programming & Computational Skills</h3>
             <p>Alongside my wet-lab experience, I have developed a foundational understanding of programming and computational tools, which I am actively improving to enhance my data analysis capabilities:</p>
             <ul>
